@@ -12,6 +12,9 @@ class HP_6612C(object):
 		NORMAL = 0
 		TEXT   = 1
 	
+	def __str__(self):
+		return "HP 6612C address: " + str(self.address)
+	
 	def preCommand(self):
 		if self.gpib.address != self.address or self.firstTime:
 			self.firstTime = False
@@ -39,7 +42,11 @@ class HP_6612C(object):
 	
 	def setVoltage(self, volt):
 		self.preCommand()
-		self.gpib.write("VOLT {:.3f}".format(volt))
+		if volt >= 0.0 and volt <= 20.475:
+			self.gpib.write("VOLT {:.3f}".format(volt))
+			return True
+		else:
+			return False
 		
 	def getVoltage(self):
 		self.preCommand()
@@ -51,7 +58,11 @@ class HP_6612C(object):
 		
 	def setCurrent(self, amps):
 		self.preCommand()
-		self.gpib.write("CURR {:.3f}".format(amps))
+		if amps >= 0.0 and amps <= 2.0475:
+			self.gpib.write("CURR {:.3f}".format(amps))
+			return True
+		else:
+			return False
 		
 	def getCurrent(self):
 		self.preCommand()
