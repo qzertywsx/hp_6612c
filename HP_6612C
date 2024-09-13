@@ -80,9 +80,9 @@ class HP_6612C(object):
 	def setDisplayText(self, text):
 		self.preCommand()
 		if self.dispMode == self.DisplayMode.NORMAL:
-			self.gpib.write(f"DISP:MODE TEXT", 0.0)
+			self.gpib.write(f"DISP:MODE TEXT")
 			self.dispMode = self.DisplayMode.TEXT
-		self.gpib.write(f"DISP:TEXT \"{text}\"", 0.0)
+		self.gpib.write(f"DISP:TEXT \"{text}\"")
 	
 	def getDisplayText(self):
 		self.preCommand()
