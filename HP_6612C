@@ -6,7 +6,6 @@ class HP_6612C(object):
 		self.gpib = gpib
 		self.firstTime = True
 		self.dispMode = self.DisplayMode.NORMAL
-		self.gpib.write("++read_tmo_ms 1200")
 		self.preCommand()
 	
 	class DisplayMode(Enum):
