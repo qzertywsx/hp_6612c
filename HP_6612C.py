@@ -74,9 +74,13 @@ class HP_6612C(object):
 			
 	def setVoltageCurrent(self, volt, amps):
 		self.preCommand()
-		self.gpib.write("VOLT {:.3f};CURR {:.3f}".format(volt, amps))
+		if volt >= 0.0 and volt <= 20.475 and amps >= 0.0 and amps <= 2.0475:
+			self.gpib.write("VOLT {:.3f};CURR {:.3f}".format(volt, amps))
+			return True
+		else:
+			return False
 	
-  def setDisplay(self, on):
+	def setDisplay(self, on):
 		self.preCommand()
 		if on:
 			self.gpib.write("DISP:STATE ON")
