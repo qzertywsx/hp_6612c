@@ -1,5 +1,5 @@
 # HP_6612C
-Python module for the HP 6612C power supply.
+Python module for the HP 6612C 20 V 2 A power supply.
 
 You must use my GPIB or GPIB_WIFI module to use this module.
 
