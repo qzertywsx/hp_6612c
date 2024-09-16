@@ -53,7 +53,7 @@ Switch the display on or off
 Set the display to normal mode (Show the measured value) 
 
 ### setDisplayText(text)
-Set a custom `text` on the display (Max 12 character)
+Set a custom `text` on the display (Max 14 character)
 
 ### getDisplayText()
 Get the custom text currently on the display
@@ -66,8 +66,9 @@ Go to local mode (Reenable the front panel control)
 from GPIB_WIFI import AR488_WIFI
 from HP_6612C import HP_6612C
 
-gpib = AR488_WIFI('192.168.178.36', timeout=5)
+gpib = AR488_WIFI('192.168.178.36', timeout=2)
 psu = HP_6612C( gpib, 6)
+print(psu)
 psu.setVoltage(5)
 psu.setCurrent(0.5)
 psu.setOutputState(True)
@@ -76,7 +77,9 @@ print("Current:", psu.getCurrent(), "A")
 psu.setOutputState(False)
 psu.local()
 ```
-## Result of executing the above code (Not done yet):
+## Result of executing the above code:
 ```
-GPIB address: 6, IP: 192.168.178.36
+HP 6612C address: 6
+Voltage: 4.99764 V
+Current: -0.000199578 A
 ```
