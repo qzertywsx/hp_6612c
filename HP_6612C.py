@@ -105,7 +105,7 @@ class HP_6612C(object):
 		self.dispMode = self.DisplayMode.NORMAL
 	
 	def setDisplayText(self, text):
-		"""Set a custom text on the display (Max ? character)"""
+		"""Set a custom text on the display (Max 14 character)"""
 		self._preCommand()
 		if self.dispMode == self.DisplayMode.NORMAL:
 			self.gpib.write(f"DISP:MODE TEXT")
