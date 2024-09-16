@@ -70,7 +70,7 @@ from GPIB_WIFI import AR488_WIFI
 from HP_6612C import HP_6612C
 
 gpib = AR488_WIFI('192.168.178.36', timeout=2)
-psu = HP_6612C( gpib, 6)
+psu = HP_6612C(gpib, 6)
 print(psu)
 psu.setVoltage(5)
 psu.setCurrent(0.5)
