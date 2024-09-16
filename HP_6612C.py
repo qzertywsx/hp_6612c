@@ -117,7 +117,16 @@ class HP_6612C(object):
 		self._preCommand()
 		self.gpib.write("DISP:TEXT?")
 		return self.gpib.query("++read").replace('"', '')
-
+	
+	def getError(self):
+		"""Get the last error"""
+		self._preCommand()
+		self.gpib.write("SYST:ERR?")
+		try:
+			return self.gpib.query("++read")
+		except:
+			return False
+	
 	def local(self):
 		"""Go to local mode (Reenable the front panel control)"""
 		self._preCommand()
