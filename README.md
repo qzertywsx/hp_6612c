@@ -61,6 +61,9 @@ Get the custom text currently on the display
 ### local()
 Go to local mode (Reenable the front panel control)
 
+### getError()
+Get the last error
+
 ## Usage:
 ```python
 from GPIB_WIFI import AR488_WIFI
