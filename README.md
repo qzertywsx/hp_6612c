@@ -80,6 +80,6 @@ psu.local()
 ## Result of executing the above code:
 ```
 HP 6612C address: 6
-Voltage: 4.99764 V
-Current: -0.000199578 A
+Voltage: 4.99763 V
+Current: 0.310207 A
 ```
