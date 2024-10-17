@@ -66,15 +66,16 @@ Get the last error
 
 ## Usage:
 ```python
-from GPIB_WIFI import AR488_WIFI
-from HP_6612C import HP_6612C
+from gpib_all import AR488Wifi
+from hp_6612c import HP6612C
 
-gpib = AR488_WIFI('192.168.178.36', timeout=2)
+gpib = AR488Wifi('192.168.178.36')
 psu = HP6612C(gpib, 6)
 print(psu)
 psu.set_voltage(5)
 psu.set_current(0.5)
 psu.set_output_state(True)
+#print("ERROR:", psu.get_error())
 print("Voltage:", psu.get_voltage(), "V")
 print("Current:", psu.get_current(), "A")
 psu.set_output_state(False)
